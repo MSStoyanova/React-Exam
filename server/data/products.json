@@ -1,0 +1,21 @@
+{
+    "55ce1a80-c25e-4bc6-9765-0930666f3fd7": {
+    "title": "T-shirt",
+    "color": "black",
+    "price": "20",
+      "imageUrl": "  https://scontent.fsof8-1.fna.fbcdn.net/v/t51.75761-15/482330984_17941414496974809_1174673725176524466_n.jpg?stp=dst-jpg_tt6&_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=29AtIsdQsycQ7kNvgFiRmWw&_nc_oc=AdloqT06Ys2JYq2Q9v0oQdhtoGKeDUL2UdtDnVaGJ7rDbWeVHJL4lOC_2P0W4tWDuEs&_nc_zt=23&_nc_ht=scontent.fsof8-1.fna&_nc_gid=PhTkaNgmy6RRQ0O4HCp6Lg&oh=00_AYGhufKIUAHCag3vbcyTOQ-x6ZXY38MCzwm40oLxwiQAZA&oe=67E20822",
+    "description": "lovely",
+    "_id": "55ce1a80-c25e-4bc6-9765-0930666f3fd7"
+},
+"6c08ccd5-1d48-41fc-93e7-2e5cf868add7": {
+    "title": "Cup",
+    "color": "white",
+    "price": "34",
+    "imageUrl": "https://scontent.fsof8-1.fna.fbcdn.net/v/t51.75761-15/482484830_17941414520974809_6112724750833077096_n.jpg?stp=dst-jpg_tt6&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=mk_FdpfKER8Q7kNvgH60wDO&_nc_oc=AdnwznyK5bCMhz6kKgix6rJzOXlur0ACQgn5tG1YEj2s-u6JagpXIR0eDGDdVdpRZds&_nc_zt=23&_nc_ht=scontent.fsof8-1.fna&_nc_gid=baakrYnJB85JNa_NvElngA&oh=00_AYHkmpr00l8D0B51jStejWpy9PPN98XUlVU5iJCdUnm1dg&oe=67E1DCCE",
+    "description": "lovely",
+    "_id": "6c08ccd5-1d48-41fc-93e7-2e5cf868add7"
+    
+}
+
+
+}
