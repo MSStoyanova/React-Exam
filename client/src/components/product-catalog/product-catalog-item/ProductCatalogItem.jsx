@@ -1,8 +1,11 @@
+import { Link } from "react-router";
+
 export default function ProductCatalogItem({
     title,
     color,
     price,
     imageUrl,
+    quantity,
     description,
     _id,
 
@@ -16,12 +19,12 @@ export default function ProductCatalogItem({
                         <div
                             className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                             <ul className="list-unstyled">
-                                <li><a className="btn btn-success text-white" href="shop-single.html"><i
-                                    className="far fa-heart"></i></a></li>
-                                <li><a className="btn btn-success text-white mt-2" href="shop-single.html"><i
-                                    className="far fa-eye"></i></a></li>
-                                <li><a className="btn btn-success text-white mt-2" href="shop-single.html"><i
-                                    className="fas fa-cart-plus"></i></a></li>
+                                <li><Link className="btn btn-success text-white" to={`/products/${_id}/details`}><i
+                                    className="far fa-heart"></i></Link></li>
+                                <li><Link className="btn btn-success text-white mt-2" to={`/products/${_id}/details`}><i
+                                    className="far fa-eye"></i></Link></li>
+                                <li><Link className="btn btn-success text-white mt-2" to={`/products/${_id}/details`}><i
+                                    className="fas fa-cart-plus"></i></Link></li>
                             </ul>
                         </div>
                     </div>

@@ -15,7 +15,7 @@ export default function ProductCreate() {
         <>
             <div className="container-fluid bg-light py-5">
                 <div className="col-md-6 m-auto text-center">
-                    <h1 className="h1">Create new design</h1>
+                    <h1 className="h1">Create new product</h1>
                 </div>
             </div>
 
@@ -47,7 +47,7 @@ export default function ProductCreate() {
                                 <ul class="list-inline pb-3">
                                     <li class="list-inline-item text-right">
                                         Quantity
-                                        <input type="hidden" name="product-quanity" id="product-quanity" value="1" />
+                                        <input type="hidden" name="quantity" id="quantity" value="" />
                                     </li>
                                     <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
                                     <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
