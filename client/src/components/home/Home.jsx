@@ -16,11 +16,10 @@ export default function Home() {
                                 </div>
                                 <div className="col-lg-6 mb-0 d-flex align-items-center">
                                     <div className="text-align-left align-self-center">
-                                        <h1 className="h1 text-success"><b>MT Were - </b> Леко луд и много разнообразен...</h1>
-                                        <h3 className="h2">Нека всеки ден да е изпълнен с усмивки, вдъхновение и любов!</h3>
+                                        <h1 className="h1 text-success"><b>MT Wear - </b> Totally crazy and really diverse...</h1>
+                                        <h3 className="h2">May every day be filled with smiles, inspiration, and love!</h3>
                                         <p>
-                                            Нашите продукти са тук, за да ви напомнят за силата на малките моменти, които правят
-                                            деня по-цветен и пълен с радост.
+                                        Our products are here to remind you of the power of small moments that make the day more colorful and full of joy.
 
                                         </p>
                                     </div>
@@ -37,12 +36,10 @@ export default function Home() {
                                 <div className="col-lg-6 mb-0 d-flex align-items-center">
                                     <div className="text-align-left">
 
-                                        <h1 className="h1 text-success"><b>Чашите, които търсите!</b></h1>
-                                        <h3 className="h2">Добавете уникален акцент към вашето кафе или изненадайте с перфектния
-                                            подарък за всякакъв повод.</h3>
+                                        <h1 className="h1 text-success"><b>The cups you're looking for!</b></h1>
+                                        <h3 className="h2">Add a unique accent to your coffee or surprise with the perfect gift for any occasion.</h3>
                                         <p>
-                                            Когато чашите за "кафе" не са точно за кафе...
-                                            Ама пък изглеждат яко...
+                                        When coffee cups aren't exactly for "coffee"... But they look cool...
                                         </p>
                                     </div>
                                 </div>
@@ -57,10 +54,10 @@ export default function Home() {
                                 </div>
                                 <div className="col-lg-6 mb-0 d-flex align-items-center">
                                     <div className="text-align-left">
-                                        <h1 className="h1 text-success"><b>Малко цвят, Малко герои, Малко шапки!</b></h1>
-                                        <h3 className="h2">Никога не е било по-лесно</h3>
+                                        <h1 className="h1 text-success"><b>A little color, A few heroes, A few hats!</b></h1>
+                                        <h3 className="h2">It has never been easier.</h3>
                                         <p>
-                                            Перфектен подарък или стилен акцент за гардероба.
+                                        A perfect gift or a stylish accent for the wardrobe.
                                         </p>
                                     </div>
                                 </div>
