@@ -1,18 +1,32 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 import productService from "../../services/productService";
 
 export default function ProductDetails() {
-    const [product, setProduct] = useState({})
+
+    const navigate = useNavigate();
+    const [product, setProduct] = useState({});
     const { productId } = useParams();
 
     useEffect(() => {
-        (async () => {
-            const result = await productService.getOne(productId)
-            setProduct(result)
-        })();
+        productService.getOne(productId)
+            .then(setProduct);
 
-    }, [productId])
+    }, [productId]);
+
+    const productDeleteClickHandler = async () => {
+        const hasConfirm = confirm(`Are you sure you want to delete ${product.title}?`);
+
+        if (!hasConfirm) {
+            return;
+        }
+
+        await productService.delete(productId);
+        navigate('/products');
+    }
+
+
+
 
     return (
         <>
@@ -23,7 +37,7 @@ export default function ProductDetails() {
                     <div className="row">
                         <div className="col-lg-5 mt-5">
                             <div className="card mb-3">
-                                <img className="card-img img-fluid" src={product.imageUrl} alt="Card image cap" id="product-detail" />
+                                <img className="card-img img-fluid" src={product.imageUrl} alt="" id="product-details" />
                             </div>
 
                         </div>
@@ -53,7 +67,6 @@ export default function ProductDetails() {
 
 
                                     <form action="" method="GET">
-                                        <input type="hidden" name="title" value={product.title} />
                                         <div className="row">
                                             <div className="col-auto">
 
@@ -67,11 +80,12 @@ export default function ProductDetails() {
                                         </div>
                                         <div className="row pb-3">
                                             <div className="col d-grid">
-                                                <a href="/create-edit-product.html"></a>
-                                                <button type="" className="btn btn-success btn-lg" name="submit" value="">Edit</button>
+                                                <Link to={`/products/${productId}/edit`} className="btn btn-success btn-lg" >Edit</Link>
                                             </div>
                                             <div className="col d-grid">
-                                                <button type="" className="btn btn-success btn-lg" name="submit" value="">Delete</button>
+                                                <button onClick={productDeleteClickHandler} className="btn btn-success btn-lg">
+                                                    Delete
+                                                </button>
                                             </div>
                                             <div className="col d-grid">
                                                 <button type="" className="btn btn-success btn-lg" name="submit" value="">Like</button>

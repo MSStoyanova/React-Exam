@@ -11,6 +11,7 @@ import About from './components/about/About'
 import ProductCatalog from './components/product-catalog/ProductCatalog'
 import ProductCreate from './components/product-create/ProductCreate'
 import ProductDetails from './components/product-details/ProductDetails'
+import ProductEdit from './components/product-edit/ProductEdit'
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/products" element={<ProductCatalog/>} />
           <Route path="/products/create" element={<ProductCreate/>} />
           <Route path="/products/:productId/details" element={<ProductDetails/>} />
+          <Route path="/products/:productId/edit" element={<ProductEdit/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/register" element={<Register/>} />
           <Route path="/about" element={<About/>} />

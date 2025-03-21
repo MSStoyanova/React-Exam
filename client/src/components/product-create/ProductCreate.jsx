@@ -43,16 +43,9 @@ export default function ProductCreate() {
                                 <input type="email" className="form-control mt-1" id="email" name="email" placeholder="Email" />
                             </div> */}
 
-                            <div class="col-auto">
-                                <ul class="list-inline pb-3">
-                                    <li class="list-inline-item text-right">
-                                        Quantity
-                                        <input type="hidden" name="quantity" id="quantity" value="" />
-                                    </li>
-                                    <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
-                                    <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
-                                    <li class="list-inline-item"><span class="btn btn-success" id="btn-plus">+</span></li>
-                                </ul>
+                            <div className="form-group col-md-6 mb-3">
+                                <label htmlFor="inputquantity">Quantity</label>
+                                <input type="number" className="form-control mt-1" id="quantity" name="quantity" placeholder="Quantity" />
                             </div>
 
                         </div>
