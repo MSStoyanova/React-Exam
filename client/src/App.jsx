@@ -1,8 +1,11 @@
 import './App.css'
 import { Routes, Route } from 'react-router'
+import { useState } from 'react'
+import { UserContext } from './contexts/UserContext'
+
 import Footer from './components/footer/Footer'
 import Header from './components/header-navigation/Header'
-import Modal from './components/header-navigation/Modal'
+//import Modal from './components/header-navigation/Modal'
 import TopNav from './components/header-navigation/TopNav'
 import Home from './components/home/Home'
 import Login from './components/login/Login'
@@ -12,40 +15,42 @@ import ProductCatalog from './components/product-catalog/ProductCatalog'
 import ProductCreate from './components/product-create/ProductCreate'
 import ProductDetails from './components/product-details/ProductDetails'
 import ProductEdit from './components/product-edit/ProductEdit'
-import { useState } from 'react'
+
 
 function App() {
-  const [email, setEmail] = useState('');
+  const [authData, setAuthData] = useState({});
 
-  const userLoginHandler = (authData) => {
-      console.log(authData);
-    setEmail(authData.email);
+  const userLoginHandler = (resultData) => {
+
+    setAuthData(resultData);
   }
 
   return (
-    <>
-      <TopNav />
-      <Header />
-     {/* <Modal /> */}
+    <UserContext.Provider value={{ ...authData, userLoginHandler }} >
 
-      <main id='main-content'>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<ProductCatalog/>} />
-          <Route path="/products/create" element={<ProductCreate/>} />
-          <Route path="/products/:productId/details" element={<ProductDetails email={email}/>} />
-          <Route path="/products/:productId/edit" element={<ProductEdit/>} />
-          <Route path="/login" element={<Login onLogin={userLoginHandler} />} />
-          <Route path="/register" element={<Register/>} />
-          <Route path="/about" element={<About/>} />
-        </Routes>
-      </main>
+      <>
+        <TopNav />
+        <Header />
+        {/* <Modal /> */}
 
+        <main id='main-content'>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<ProductCatalog />} />
+            <Route path="/products/create" element={<ProductCreate />} />
+            <Route path="/products/:productId/details" element={<ProductDetails />} />
+            <Route path="/products/:productId/edit" element={<ProductEdit />} />
+            <Route path="/login" element={<Login onLogin={userLoginHandler} />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </main>
 
+        <Footer />
 
-      <Footer />
+      </>
+    </UserContext.Provider>
 
-    </>
   )
 }
 

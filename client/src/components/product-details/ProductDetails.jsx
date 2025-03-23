@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import productService from "../../services/productService";
 import CommentsShow from "../comments-show/CommentsShow";
 import CommentsCreate from "../comments-create/CommentsCreate";
 import commentService from "../../services/commentService";
+import { UserContext } from "../../contexts/UserContext";
 
-export default function ProductDetails({
-    email
-}) {
+export default function ProductDetails() {
 
     const navigate = useNavigate();
+    const { email } = useContext(UserContext);
     const [product, setProduct] = useState({});
     const [comments, setComments] = useState([])
     const { productId } = useParams();
@@ -46,9 +46,9 @@ export default function ProductDetails({
                 <div className="container pb-5">
                     <div className="row">
                         <div className="col-lg-5 mt-5">
-                            
-                                <img className="card-img img-fluid" src={product.imageUrl} alt="" id="product-details" />
-                           
+
+                            <img className="card-img img-fluid" src={product.imageUrl} alt="" id="product-details" />
+
 
                         </div>
 
@@ -76,34 +76,34 @@ export default function ProductDetails({
                                     </ul>
 
 
-                                    
-                                        <div className="row">
-                                            <div className="col-auto">
 
-                                            </div>
-                                            <div className="col-auto">
-                                                <ul className="list-inline pb-3">
-                                                    <li className="list-inline-item text-right">Quantity: {product.quantity}
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <CommentsShow comments={comments}/>
+                                    <div className="row">
+                                        <div className="col-auto">
 
-                                        <div className="row pb-3">
-                                            <div className="col d-grid">
-                                                <Link to={`/products/${productId}/edit`} className="btn btn-success btn-lg" >Edit</Link>
-                                            </div>
-                                            <div className="col d-grid">
-                                                <button onClick={productDeleteClickHandler} className="btn btn-success btn-lg">
-                                                    Delete
-                                                </button>
-                                            </div>
-                                            <div className="col d-grid">
-                                                <button type="" className="btn btn-success btn-lg" name="submit" value="">Like</button>
-                                            </div>
                                         </div>
-                                    
+                                        <div className="col-auto">
+                                            <ul className="list-inline pb-3">
+                                                <li className="list-inline-item text-right">Quantity: {product.quantity}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <CommentsShow comments={comments} />
+
+                                    <div className="row pb-3">
+                                        <div className="col d-grid">
+                                            <Link to={`/products/${productId}/edit`} className="btn btn-success btn-lg" >Edit</Link>
+                                        </div>
+                                        <div className="col d-grid">
+                                            <button onClick={productDeleteClickHandler} className="btn btn-success btn-lg">
+                                                Delete
+                                            </button>
+                                        </div>
+                                        <div className="col d-grid">
+                                            <button type="" className="btn btn-success btn-lg" name="submit" value="">Like</button>
+                                        </div>
+                                    </div>
+
                                     <CommentsCreate email={email} productId={productId} onCreate={commentCreateHandler} />
                                 </div>
                             </div>
