@@ -11,7 +11,7 @@ export default function Register() {
             </div>
 
 
-            <div className="container py-5">
+            <div className="container-fluid bg-light py-5">
                 <div className="row py-5">
                     <form className="col-md-9 m-auto" method="post" role="form">
                         <div className="row">

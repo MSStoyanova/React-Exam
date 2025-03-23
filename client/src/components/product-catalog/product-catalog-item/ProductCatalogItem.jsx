@@ -27,8 +27,7 @@ export default function ProductCatalogItem({
                                     className="fas fa-cart-plus"></i></Link></li>
                             </ul>
                         </div>
-                    </div>
-                    <div className="card-body">
+                    
                         <ul className="w-100 list-unstyled d-flex justify-content-between mb-0">
                             <li className="pt-2">
                                 <span

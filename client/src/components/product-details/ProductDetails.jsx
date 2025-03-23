@@ -1,16 +1,24 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import productService from "../../services/productService";
+import CommentsShow from "../comments-show/CommentsShow";
+import CommentsCreate from "../comments-create/CommentsCreate";
+import commentService from "../../services/commentService";
 
-export default function ProductDetails() {
+export default function ProductDetails({
+    email
+}) {
 
     const navigate = useNavigate();
     const [product, setProduct] = useState({});
+    const [comments, setComments] = useState([])
     const { productId } = useParams();
 
     useEffect(() => {
         productService.getOne(productId)
             .then(setProduct);
+        commentService.getAll(productId)
+            .then(setComments)
 
     }, [productId]);
 
@@ -25,7 +33,9 @@ export default function ProductDetails() {
         navigate('/products');
     }
 
-
+    const commentCreateHandler = (newComment) => {
+        setComments(state => [...state, newComment]);
+    };
 
 
     return (
@@ -36,9 +46,9 @@ export default function ProductDetails() {
                 <div className="container pb-5">
                     <div className="row">
                         <div className="col-lg-5 mt-5">
-                            <div className="card mb-3">
+                            
                                 <img className="card-img img-fluid" src={product.imageUrl} alt="" id="product-details" />
-                            </div>
+                           
 
                         </div>
 
@@ -66,7 +76,7 @@ export default function ProductDetails() {
                                     </ul>
 
 
-                                    <form action="" method="GET">
+                                    
                                         <div className="row">
                                             <div className="col-auto">
 
@@ -78,6 +88,8 @@ export default function ProductDetails() {
                                                 </ul>
                                             </div>
                                         </div>
+                                        <CommentsShow comments={comments}/>
+
                                         <div className="row pb-3">
                                             <div className="col d-grid">
                                                 <Link to={`/products/${productId}/edit`} className="btn btn-success btn-lg" >Edit</Link>
@@ -91,13 +103,14 @@ export default function ProductDetails() {
                                                 <button type="" className="btn btn-success btn-lg" name="submit" value="">Like</button>
                                             </div>
                                         </div>
-                                    </form>
-
+                                    
+                                    <CommentsCreate email={email} productId={productId} onCreate={commentCreateHandler} />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </section>
 
         </>

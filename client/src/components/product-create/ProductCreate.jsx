@@ -22,39 +22,35 @@ export default function ProductCreate() {
 
             <div className="container py-5">
                 <div className="row py-5">
-                    <form id="create" action={submitAction} className="col-md-9 m-auto" method="POST" role="form">
+                    <form id="create" action={submitAction} className="col-md-9 m-auto" role="form">
                         <div className="row">
                             <div className="form-group col-md-6 mb-3">
-                                <label htmlFor="inputname">Title</label>
+                                <label htmlFor="inputName">Title</label>
                                 <input type="text" className="form-control mt-1" id="title" name="title" placeholder="Title" />
                             </div>
                             <div className="form-group col-md-6 mb-3">
-                                <label htmlFor="inputcolor">Color</label>
+                                <label htmlFor="inputColor">Color</label>
                                 <input type="text" className="form-control mt-1" id="color" name="color" placeholder="Color" />
                             </div>
                         </div>
                         <div className="row">
                             <div className="form-group col-md-6 mb-3">
-                                <label htmlFor="inputprice">Price</label>
+                                <label htmlFor="inputPrice">Price</label>
                                 <input type="number" className="form-control mt-1" id="price" name="price" placeholder="Price" />
                             </div>
-                            {/* <div className="form-group col-md-6 mb-3">
-                                <label htmlFor="inputemail">Specs</label>
-                                <input type="email" className="form-control mt-1" id="email" name="email" placeholder="Email" />
-                            </div> */}
-
+                           
                             <div className="form-group col-md-6 mb-3">
-                                <label htmlFor="inputquantity">Quantity</label>
+                                <label htmlFor="inputQuantity">Quantity</label>
                                 <input type="number" className="form-control mt-1" id="quantity" name="quantity" placeholder="Quantity" />
                             </div>
 
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="inputimage">Image URL</label>
+                            <label htmlFor="inputImage">Image URL</label>
                             <input type="text" className="form-control mt-1" id="imageUrl" name="imageUrl" placeholder="Image" />
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="inputmessage">Description</label>
+                            <label htmlFor="inputDescription">Description</label>
                             <textarea className="form-control mt-1" id="description" name="description" placeholder="Description" rows="8"></textarea>
                         </div>
                         <div className="row">
